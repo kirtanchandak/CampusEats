@@ -6,7 +6,6 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [college, setCollege] = useState("");
   const [name, setName] = useState("");
-  console.log(college);
 
   const handleSumbit = async (e) => {
     e.preventDefault();
