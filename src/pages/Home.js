@@ -5,8 +5,10 @@ import bits from "../assets/bits.gif";
 import vit from "../assets/vit.png";
 import lmniit from "../assets/lmniit.png";
 import lpu from "../assets/lpu.png";
+import { useCookies } from "react-cookie";
 
 function Home() {
+  const [cookies, setCookies] = useCookies(["access_token"]);
   return (
     <>
       <Layout>
@@ -23,11 +25,23 @@ function Home() {
                 exclusive discounts and deals on affordable meals, ensuring that
                 no student goes hungry.
               </p>
-              <div class="sm:flex sm:space-y-0 sm:space-x-4 flex gap-5 pt-4">
+              <div class="sm:flex sm:space-y-0 sm:space-x-4 flex pt-4">
                 <button className="font-medium">Login</button>
-                <button className="bg-[#D6FF79] px-2 py-2 rounded-md font-medium">
-                  Register as a Business
-                </button>
+                {cookies.access_token ? (
+                  <a
+                    href="/deals"
+                    className="bg-[#D6FF79] px-2 py-2 rounded-md font-medium"
+                  >
+                    Explore Deals
+                  </a>
+                ) : (
+                  <a
+                    href="/login"
+                    className="bg-[#D6FF79] px-2 py-2 rounded-md font-medium"
+                  >
+                    Explore Deals
+                  </a>
+                )}
               </div>
             </div>
             <div class="lg:mt-0 lg:col-span-5 lg:flex pt-7">

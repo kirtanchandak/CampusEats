@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   college: { type: String, required: true },
   name: { type: String, required: true },
+  slug: { type: String, required: true },
 });
 
 export const UserModel = mongoose.model("user", userSchema);
