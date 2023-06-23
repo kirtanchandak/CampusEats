@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function Layout({ children }) {
   return (
@@ -9,7 +10,9 @@ function Layout({ children }) {
           <Header />
         </div>
         <main className="flex-grow">{children}</main>
-        <footer>footer</footer>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </>
   );
