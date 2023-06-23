@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        className="flex flex-col md:flex-row bg-yellow-200 
+        className="flex flex-col md:flex-row bg-[#D6FF79] 
       text-2xl justify-between fixed w-screen font-poppins"
       >
         <div className="flex items-center">
