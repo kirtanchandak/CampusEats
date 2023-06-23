@@ -13,7 +13,7 @@ mongoose
     // Create an array of product objects
     const productsData = [
       {
-        name: "ABC University",
+        name: "BITS Pliani",
         shops: [
           {
             name: "The Dining Hall",
@@ -42,7 +42,7 @@ mongoose
         ],
       },
       {
-        name: "XYZ College",
+        name: "LMNIIT Jaipur",
         shops: [
           {
             name: "Savory Delights",
@@ -71,7 +71,7 @@ mongoose
         ],
       },
       {
-        name: "PQR Institute",
+        name: "VIT Vellore",
         shops: [
           {
             name: "The Hungry Owl",
@@ -100,7 +100,7 @@ mongoose
         ],
       },
       {
-        name: "XYZ University",
+        name: "LPU Punjab",
         shops: [
           {
             name: "The Campus Grill",
