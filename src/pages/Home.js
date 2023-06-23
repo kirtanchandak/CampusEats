@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../components/Layout";
 import boy from "../assets/Take Away-cuate.png";
 import bits from "../assets/bits.gif";
 import vit from "../assets/vit.png";
@@ -14,13 +14,14 @@ function Home() {
           <div class="grid max-w-screen-xl px-4 pt-24 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-24 lg:pb-12">
             <div class="mr-auto place-self-center lg:col-span-7 mt-2">
               <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl">
-                Building digital <br />
-                products & brands.
+                Connecting locals <br />
+                for affordable meals.
               </h1>
               <p class="max-w-2xl font-light text-gray-500 lg:mb-2 md:text-lg lg:text-xl dark:text-gray-400">
-                This free and open-source landing page template was built using
-                the utility classes from Tailwind CSS and based on the
-                components from the Flowbite Library Blocks System.
+                CampusEats is the ultimate solution for students facing food
+                insecurity. We partner with local businesses to provide
+                exclusive discounts and deals on affordable meals, ensuring that
+                no student goes hungry.
               </p>
               <div class="sm:flex sm:space-y-0 sm:space-x-4 flex gap-5 pt-4">
                 <button className="font-medium">Login</button>
@@ -64,14 +65,12 @@ function Home() {
               </div>
               <div class="text-center">
                 <a href="/">
-                  <h3 class="font-semibold text-xl mb-3">
-                    Search for an Event
-                  </h3>
+                  <h3 class="font-semibold text-xl mb-3">Register</h3>
                 </a>
                 <p class="text-sm text-center font-normal text-gray7">
-                  Search for an event in your area. For eg. garbage collection
-                  drives, blood donation camps, etc. You can find almost
-                  anything
+                  Register yourself as a student on our platform and get acccess
+                  to all the amazing deals and offers on your favorite food
+                  items, and regular meals near your campus.
                 </p>
               </div>
             </div>
@@ -81,14 +80,11 @@ function Home() {
               </div>
               <div class="text-center">
                 <a href="/">
-                  <h3 class="font-semibold text-xl mb-3">
-                    Register for the event
-                  </h3>
+                  <h3 class="font-semibold text-xl mb-3">Search for an food</h3>
                 </a>
                 <p class="text-sm text-center font-normal text-gray7">
-                  Find an imapcful event to contribute and enjoy a day of
-                  hands-on conservation. Help make a difference and create a
-                  positive impact on our planet!
+                  Search for the food items, complete meals, or restaurants near
+                  your campus and get amazing deals and offers on your favorite.
                 </p>
               </div>
             </div>
@@ -98,12 +94,13 @@ function Home() {
               </div>
               <div class="text-center">
                 <a href="/">
-                  <h3 class="font-semibold text-xl mb-3">Attend the Event</h3>
+                  <h3 class="font-semibold text-xl mb-3">
+                    Subscribe for the best Deals
+                  </h3>
                 </a>
                 <p class="text-sm text-center font-normal text-gray7">
-                  Once, registered the NGO will check the fullfillments and
-                  confirm your registration and enjoy the event! Congrats now
-                  you can attend!
+                  Find amazing deals and offers on your favorite food items, and
+                  regular lunch and dinner meals near your campus.
                 </p>
               </div>
             </div>
