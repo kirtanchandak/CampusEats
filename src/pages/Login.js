@@ -18,6 +18,7 @@ function Login() {
       });
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
+      window.localStorage.setItem("slug", response.data.slug);
       navigate("/");
       console.log(response);
     } catch (err) {
