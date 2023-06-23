@@ -26,7 +26,7 @@ function Home() {
                 exclusive discounts and deals on affordable meals, ensuring that
                 no student goes hungry.
               </p>
-              <div class="sm:flex sm:space-y-0 sm:space-x-4 flex pt-4">
+              <div class="sm:flex sm:space-y-0 sm:space-x-4 flex pt-4 gap-5">
                 <button className="font-medium">Login</button>
                 {cookies.access_token ? (
                   <a

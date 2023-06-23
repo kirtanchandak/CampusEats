@@ -14,6 +14,7 @@ mongoose
     const productsData = [
       {
         name: "BITS Pliani",
+        slug: "bits-pilani",
         shops: [
           {
             name: "The Dining Hall",
@@ -43,6 +44,7 @@ mongoose
       },
       {
         name: "LMNIIT Jaipur",
+        slug: "lmniit-jaipur",
         shops: [
           {
             name: "Savory Delights",
@@ -72,6 +74,7 @@ mongoose
       },
       {
         name: "VIT Vellore",
+        slug: "vit-vellore",
         shops: [
           {
             name: "The Hungry Owl",
@@ -101,6 +104,7 @@ mongoose
       },
       {
         name: "LPU Punjab",
+        slug: "lpu-punjab",
         shops: [
           {
             name: "The Campus Grill",

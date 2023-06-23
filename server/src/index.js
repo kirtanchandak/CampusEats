@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { userRouter } from "./routes/users.js";
+import { collegesRouter } from "./routes/colleges.js";
 
 dotenv.config({ path: "./.env" });
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/auth", userRouter);
+app.use("/colleges", collegesRouter);
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
