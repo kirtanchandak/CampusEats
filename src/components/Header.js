@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { AiFillHeart } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
+import { useCookies } from "react-cookie";
 
 const Navbar = () => {
+  const [cookies, setCookies] = useCookies(["access_token"]);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -18,7 +21,7 @@ const Navbar = () => {
             CampusEats🍽️
           </a>
           <div className="md:hidden mr-2 cursor-pointer" onClick={toggle}>
-            <FaHamburger />
+            {!cookies.access_token ? <FaHamburger /> : <AiFillHeart />}
           </div>
         </div>
         <div className="a-content hidden md:flex mt-4">
@@ -33,11 +36,19 @@ const Navbar = () => {
                 Shop
               </a>
             </li>
-            <li>
-              <a href="/login" className="mr-4">
-                Login
-              </a>
-            </li>
+            {!cookies.access_token ? (
+              <li>
+                <a href="/login" className="mr-4">
+                  Login
+                </a>
+              </li>
+            ) : (
+              <li>
+                <a href="/profile" className="mr-4">
+                  🫀
+                </a>
+              </li>
+            )}
           </ul>
         </div>
         {/*for mobile*/}
@@ -49,9 +60,15 @@ const Navbar = () => {
           }
           onClick={toggle}
         >
-          <a href="/login" className="px-6">
-            Login
-          </a>
+          {!cookies.access_token ? (
+            <a href="/login" className="px-6">
+              Login
+            </a>
+          ) : (
+            <a href="/profile" className="px-6">
+              Profile
+            </a>
+          )}
 
           <a href="/" className="px-6">
             Shop
