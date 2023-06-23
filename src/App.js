@@ -1,9 +1,10 @@
 import "./App.css";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <>
-      <h1 className="">Init!</h1>
+      <Layout />
     </>
   );
 }
