@@ -8,6 +8,7 @@ function SignUp() {
   const [name, setName] = useState("");
   const [slug, setSlug] = useState("");
   console.log(college);
+
   const handleSumbit = async (e) => {
     e.preventDefault();
     try {
@@ -30,7 +31,7 @@ function SignUp() {
     const slug = name.toLowerCase().split(" ").join("-");
     setSlug(slug);
   };
-
+  console.log(slug);
   return (
     <div>
       <form action="" onSubmit={handleSumbit}>
@@ -63,7 +64,7 @@ function SignUp() {
           id="college"
           placeholder="College"
           onChange={(e) => setCollege(e.target.value)}
-          value={college}
+          defaultValue=""
         >
           <option value="" disabled selected>
             Select College
