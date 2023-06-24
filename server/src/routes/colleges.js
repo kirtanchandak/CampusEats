@@ -16,4 +16,23 @@ router.get("/get", async (req, res) => {
   }
 });
 
+router.get("/getShops", async (req, res) => {
+  const { slug } = req.body;
+
+  try {
+    const college = await CollegeModel.findOne({ slug });
+
+    if (!college) {
+      return res.status(404).json({ error: "College not found" });
+    }
+
+    const shops = college.shops;
+
+    res.json({ shops });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 export { router as collegesRouter };
