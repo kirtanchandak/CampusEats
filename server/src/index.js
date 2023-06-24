@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { userRouter } from "./routes/users.js";
 import { collegesRouter } from "./routes/colleges.js";
+import { subscriptionRouter } from "./routes/subscription.js";
 
 dotenv.config({ path: "./.env" });
 
@@ -14,6 +15,7 @@ app.use(cors());
 
 app.use("/auth", userRouter);
 app.use("/colleges", collegesRouter);
+app.use("/subscription", subscriptionRouter);
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
