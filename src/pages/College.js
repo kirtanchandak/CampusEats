@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import Layout from "../components/Layout";
 
 function ShopListBySlug() {
   const [cookies, setCookies] = useCookies(["access_token"]);
   const [shops, setShops] = useState([]);
-  const [url, SetUrl] = useState("");
+
   const { slug } = useParams();
 
   useEffect(() => {
@@ -26,58 +26,51 @@ function ShopListBySlug() {
     fetchData();
   }, [slug]);
 
-  useEffect(() => {
-    const createSubscription = async () => {
-      try {
-        console.log("creating subscription");
-
-        const response = await axios.post(
-          "http://localhost:5000/subscription/createSubscription",
-          {
-            plan_id: "plan_M5irfhywi6foVr",
-            customer_notify: 1,
-            quantity: 1,
-            total_count: 1,
-            addons: [
-              {
-                item: {
-                  name: "Delivery charges",
-                  amount: 30000,
-                  currency: "INR",
-                },
-              },
-            ],
-            notes: {
-              key1: "value3",
-              key2: "value2",
-            },
-          }
-        );
-        SetUrl(response.data.short_url);
-        console.log(url);
-        console.log(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    createSubscription();
-  }, []);
-
   return (
     <>
       {cookies.access_token ? (
         <Layout>
-          <div className="pt-20">
-            <h2>Shops:</h2>
-            <ul>
+          <div className="pt-20 pb-32">
+            <div className="text-center p-2 pb-14">
+              <h1 className="text-5xl font-[700]">
+                Shops Near {localStorage.getItem("college")}
+              </h1>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {shops.map((shop) => (
-                <li key={shop._id.$oid}>
-                  <h3>{shop.name}</h3>
-                  <p>{shop.description}</p>
-                </li>
+                <Link to={`/deals/${slug}/${shop._id}`}>
+                  <div class="flex flex-col items-center space-y-2 px-6 shadow-md">
+                    <div class="mt-3 md:mt-0">
+                      <img
+                        class="rounded-t-lg"
+                        src={shop.img}
+                        alt="eventimg"
+                        width="100%"
+                        height="100%"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-between w-full h-full p-3">
+                      <div class="text-xl font-semibold">{shop.title}</div>
+                      <p
+                        className="font-medium text-xl
+                    "
+                      >
+                        {shop.name}
+                      </p>
+
+                      <p class="text-gray-700 font-medium text-base pt-0 pb-1 line-clamp-3">
+                        {shop.description}
+                      </p>
+                      <Link to={`/deals/${slug}/${shop._id}`}>
+                        <button class="bg-[#576CBC] rounded-lg btn px-2 py-1 mt-2 text-white">
+                          View Shop
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         </Layout>
       ) : (
