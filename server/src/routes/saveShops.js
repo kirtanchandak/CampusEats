@@ -27,4 +27,4 @@ router.put("/", async (req, res) => {
   }
 });
 
-export { router as shops };
+export { router as saveShops };

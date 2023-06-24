@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import { userRouter } from "./routes/users.js";
 import { collegesRouter } from "./routes/colleges.js";
 import { subscriptionRouter } from "./routes/subscription.js";
-import { shops } from "./routes/shop.js";
+import { saveShops } from "./routes/saveShops.js";
 
 dotenv.config({ path: "./.env" });
 
@@ -17,7 +17,7 @@ app.use(cors());
 app.use("/auth", userRouter);
 app.use("/colleges", collegesRouter);
 app.use("/subscription", subscriptionRouter);
-app.use("/saveSubscription", shops);
+app.use("/saveSubscription", saveShops);
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,

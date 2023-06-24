@@ -1,12 +1,17 @@
 import React from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const name = window.localStorage.getItem("name");
   const college = window.localStorage.getItem("college");
+  const [cookies, setCookies] = useCookies(["access_token"]);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    window.localStorage.clear();
-    window.location.href = "/login";
+    setCookies(["access_token"], "");
+    window.localStorage.removeItem("userID");
+    navigate("/login");
   };
   return (
     <>

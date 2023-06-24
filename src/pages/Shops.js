@@ -3,12 +3,23 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Shops = () => {
-  const { shop: selectedShopId } = useParams();
+  const { shop: shopID } = useParams();
   const slug = localStorage.getItem("slug");
+  const userID = localStorage.getItem("userID");
   const [shopData, setShopData] = useState(null);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  const handleSubscription = () => {
+  const handleSubscription = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.put("http://localhost:5000/saveSubscription", {
+        shopID,
+        userID,
+        slug,
+      });
+    } catch (err) {
+      console.log(err);
+    }
     setIsButtonDisabled(true);
   };
 
@@ -21,16 +32,16 @@ const Shops = () => {
         );
         const shops = response.data.shops;
         console.log("The data is ", shops);
-        const selectedShop = shops.find(
-          (shopItem) => shopItem._id === selectedShopId
-        );
+        const selectedShop = shops.find((shopItem) => shopItem._id === shopID);
         setShopData(selectedShop);
       } catch (error) {
         console.log(error);
       }
     };
     fetchData();
-  }, [selectedShopId, slug]);
+  }, [shopID, slug]);
+
+  const saveShop = async (e) => {};
 
   return (
     <>
