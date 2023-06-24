@@ -17,6 +17,7 @@ const Shops = () => {
         userID,
         slug,
       });
+      console.log("Subscription saved");
     } catch (err) {
       console.log(err);
     }
