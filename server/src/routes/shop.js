@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.put("/", async (req, res) => {
   try {
-    const college = await CollegeModel.findById(req.body.collegeID);
+    const college = await CollegeModel.findOne({ slug: req.body.slug });
     const shopID = req.body.shopID;
     const shop = college.shops.find((shop) => shop._id.toString() === shopID);
     const user = await UserModel.findById(req.body.userID);
