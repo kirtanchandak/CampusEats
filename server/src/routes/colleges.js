@@ -16,6 +16,7 @@ router.get("/get", async (req, res) => {
   }
 });
 
+//get shops only
 router.get("/getShops/:slug", async (req, res) => {
   try {
     const { slug } = req.params;
