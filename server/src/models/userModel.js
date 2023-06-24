@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   college: { type: String, required: true },
   name: { type: String, required: true },
   slug: { type: String, required: true },
+  subscribedShops: [{ type: mongoose.Schema.Types.ObjectId, ref: "colleges" }],
 });
 
 export const UserModel = mongoose.model("user", userSchema);
