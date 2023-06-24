@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 function ShopListBySlug() {
   const [cookies, setCookies] = useCookies(["access_token"]);
   const [shops, setShops] = useState([]);
+  const [url, SetUrl] = useState("");
   const { slug } = useParams();
 
   useEffect(() => {
@@ -22,9 +23,46 @@ function ShopListBySlug() {
         console.log(error);
       }
     };
-
     fetchData();
   }, [slug]);
+
+  useEffect(() => {
+    const createSubscription = async () => {
+      try {
+        console.log("creating subscription");
+
+        const response = await axios.post(
+          "http://localhost:5000/subscription/createSubscription",
+          {
+            plan_id: "plan_M5irfhywi6foVr",
+            customer_notify: 1,
+            quantity: 1,
+            total_count: 1,
+            addons: [
+              {
+                item: {
+                  name: "Delivery charges",
+                  amount: 30000,
+                  currency: "INR",
+                },
+              },
+            ],
+            notes: {
+              key1: "value3",
+              key2: "value2",
+            },
+          }
+        );
+        SetUrl(response.data.short_url);
+        console.log(url);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    createSubscription();
+  }, []);
 
   return (
     <>
