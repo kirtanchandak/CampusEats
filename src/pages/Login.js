@@ -19,6 +19,9 @@ function Login() {
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
       window.localStorage.setItem("slug", response.data.slug);
+      window.localStorage.setItem("username", response.data.username);
+      window.localStorage.setItem("name", response.data.name);
+      window.localStorage.setItem("college", response.data.college);
       navigate("/");
       console.log(response);
     } catch (err) {

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
 import { useCookies } from "react-cookie";
+import profile from "../assets/profile.png";
 
 const Navbar = () => {
   const [cookies, setCookies] = useCookies(["access_token"]);
@@ -9,6 +10,9 @@ const Navbar = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const username = localStorage.getItem("username");
+  console.log(username);
 
   return (
     <div>
@@ -21,7 +25,13 @@ const Navbar = () => {
             CampusEats🍽️
           </a>
           <div className="md:hidden mr-2 cursor-pointer" onClick={toggle}>
-            {!cookies.access_token ? <FaHamburger /> : <AiFillHeart />}
+            {!cookies.access_token ? (
+              <FaHamburger />
+            ) : (
+              <>
+                <img src={profile} alt="profile-pic" className="w-8" />
+              </>
+            )}
           </div>
         </div>
         <div className="a-content hidden md:flex mt-4">
@@ -44,8 +54,12 @@ const Navbar = () => {
               </li>
             ) : (
               <li>
-                <a href="/profile" className="mr-4">
-                  🫀
+                <a href={`/profile/${username}`}>
+                  <img
+                    src={profile}
+                    alt="profile-pic"
+                    className="w-8 pb-3 mr-6"
+                  />
                 </a>
               </li>
             )}
@@ -65,7 +79,7 @@ const Navbar = () => {
               Login
             </a>
           ) : (
-            <a href="/profile" className="px-6">
+            <a href={`/profile/${username}`} className="px-6">
               Profile
             </a>
           )}

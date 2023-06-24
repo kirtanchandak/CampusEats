@@ -40,7 +40,14 @@ router.post("/login", async (req, res) => {
   }
 
   const token = jwt.sign({ id: user._id }, "secret");
-  res.json({ token, userID: user._id, slug: user.slug });
+  res.json({
+    token,
+    userID: user._id,
+    slug: user.slug,
+    username: user.username,
+    name: user.name,
+    college: user.college,
+  });
 });
 
 //middleware
