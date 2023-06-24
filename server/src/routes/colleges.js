@@ -16,10 +16,10 @@ router.get("/get", async (req, res) => {
   }
 });
 
-router.get("/getShops", async (req, res) => {
-  const { slug } = req.body;
-
+router.get("/getShops/:slug", async (req, res) => {
   try {
+    const { slug } = req.params;
+
     const college = await CollegeModel.findOne({ slug });
 
     if (!college) {

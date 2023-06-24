@@ -14,10 +14,7 @@ const Shops = () => {
       try {
         console.log(slug);
         const response = await axios.get(
-          "http://localhost:5000/colleges/getShops",
-          {
-            slug,
-          }
+          `http://localhost:5000/colleges/getShops/${slug}`
         );
         const shops = response.data;
         console.log("The data is ", shops);
