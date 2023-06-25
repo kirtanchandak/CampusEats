@@ -4,8 +4,7 @@ import { useParams } from "react-router-dom";
 
 const Shops = () => {
   const { shop: shopID } = useParams();
-  const slug = localStorage.getItem("slug");
-  const college = localStorage.getItem("college");
+  const collegeID = localStorage.getItem("college");
   const userID = localStorage.getItem("userID");
   const [shopData, setShopData] = useState(null);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -16,7 +15,7 @@ const Shops = () => {
       await axios.put("http://localhost:5000/saveSubscription", {
         shopID,
         userID,
-        slug,
+        collegeID,
       });
       console.log("Subscription saved");
     } catch (err) {
@@ -28,9 +27,8 @@ const Shops = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log(slug);
         const response = await axios.get(
-          `http://localhost:5000/colleges/getShops/${college}`
+          `http://localhost:5000/colleges/getShops/${collegeID}`
         );
         const shops = response.data.shops;
         console.log("The data is ", shops);
@@ -41,7 +39,7 @@ const Shops = () => {
       }
     };
     fetchData();
-  }, [shopID, slug]);
+  }, [shopID, collegeID]);
 
   const saveShop = async (e) => {};
 
