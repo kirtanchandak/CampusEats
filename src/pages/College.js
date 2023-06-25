@@ -7,25 +7,39 @@ import Layout from "../components/Layout";
 function ShopListByID() {
   const [cookies, setCookies] = useCookies(["access_token"]);
   const [shops, setShops] = useState([]);
-  const college = localStorage.getItem("college");
+  const collegeID = localStorage.getItem("college");
 
   const { id } = useParams();
+  console.log(id);
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(`http://localhost:5000/colleges/get`);
+  //       const colleges = response.data;
+  //       const college = colleges.find((col) => col.college === id);
+  //       if (college) {
+  //         setShops(college.shops);
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [id]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/colleges/get`);
-        const colleges = response.data;
-        const college = colleges.find((col) => col.college === id);
-        if (college) {
-          setShops(college.shops);
-        }
+        const response = await axios.get(
+          `http://localhost:5000/colleges/getShops/${collegeID}`
+        );
+        console.log(response.data);
       } catch (error) {
         console.log(error);
       }
     };
     fetchData();
-  }, [id]);
+  }, []);
 
   return (
     <>
@@ -37,12 +51,12 @@ function ShopListByID() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {shops.map((shop) => (
-                <Link to={`/deals/${college}/${shop._id}`}>
+                <Link to={`/deals/${collegeID}/${shop._id}`}>
                   <div class="flex flex-col items-center space-y-2 px-6 shadow-md">
                     <div class="mt-3 md:mt-0">
                       <img
                         class="rounded-t-lg"
-                        src={shop.img}
+                        src={shop.image}
                         alt="eventimg"
                         width="100%"
                         height="100%"
