@@ -6,19 +6,18 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [college, setCollege] = useState("");
   const [name, setName] = useState("");
-  const [slug, setSlug] = useState("");
+  // const [slug, setSlug] = useState("");
   console.log(college);
 
   const handleSumbit = async (e) => {
     e.preventDefault();
     try {
-      handleSlug(college);
+      // handleSlug(college);
       await axios.post("http://localhost:5000/auth/register", {
         username,
         password,
         college,
         name,
-        slug,
       });
 
       alert("Account created successfully");
@@ -27,11 +26,11 @@ function SignUp() {
     }
   };
 
-  const handleSlug = (name) => {
-    const slug = name.toLowerCase().split(" ").join("-");
-    setSlug(slug);
-  };
-  console.log(slug);
+  // const handleSlug = (name) => {
+  //   const slug = name.toLowerCase().split(" ").join("-");
+  //   setSlug(slug);
+  // };
+  // console.log(slug);
   return (
     <div>
       <form action="" onSubmit={handleSumbit}>
@@ -69,10 +68,10 @@ function SignUp() {
           <option value="" disabled selected>
             Select College
           </option>
-          <option value="BITS Pliani">BITS Pliani</option>
-          <option value="LMNIIT Jaipur">LMNIIT Jaipur</option>
-          <option>VIT Vellore</option>
-          <option>LPU Punjab</option>
+          <option value="649622bda1cabe2562d48023">BITS Pliani</option>
+          <option value="649622bda1cabe2562d48028">LMNIIT Jaipur</option>
+          <option value="649622bda1cabe2562d4802d">VIT Vellore</option>
+          <option value="649622bda1cabe2562d48032">LPU Punjab</option>
         </select>
         <button>Create Account</button>
       </form>

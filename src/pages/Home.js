@@ -9,7 +9,7 @@ import { useCookies } from "react-cookie";
 
 function Home() {
   const [cookies, setCookies] = useCookies(["access_token"]);
-  const slug = localStorage.getItem("slug");
+  const college = localStorage.getItem("college");
   return (
     <>
       <Layout>
@@ -30,14 +30,14 @@ function Home() {
                 <button className="font-medium">Login</button>
                 {cookies.access_token ? (
                   <a
-                    href={`deals/${slug}`}
+                    href={`deals/${college}`}
                     className="bg-[#D6FF79] px-2 py-2 rounded-md font-medium"
                   >
                     Explore Deals
                   </a>
                 ) : (
                   <a
-                    href={`deals/${slug}`}
+                    href={`deals/${college}`}
                     className="bg-[#D6FF79] px-2 py-2 rounded-md font-medium"
                   >
                     Explore Deals
