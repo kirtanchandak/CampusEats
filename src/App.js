@@ -3,10 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-
 import Profile from "./pages/Profile";
-import ShopListBySlug from "./pages/College";
 import Shops from "./pages/Shops";
+import ShopListByID from "./pages/College";
 
 function App() {
   return (
@@ -15,8 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="deals/:college" element={<ShopListBySlug />} />
-        <Route path="deals/:slug/:shop" element={<Shops />} />
+        <Route path="deals/:college" element={<ShopListByID />} />
+        <Route path="deals/:college/:shop" element={<Shops />} />
         <Route path="profile/:username" element={<Profile />} />
       </Routes>
     </>

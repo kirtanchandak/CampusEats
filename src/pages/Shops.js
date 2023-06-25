@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 const Shops = () => {
   const { shop: shopID } = useParams();
   const slug = localStorage.getItem("slug");
+  const college = localStorage.getItem("college");
   const userID = localStorage.getItem("userID");
   const [shopData, setShopData] = useState(null);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -29,7 +30,7 @@ const Shops = () => {
       try {
         console.log(slug);
         const response = await axios.get(
-          `http://localhost:5000/colleges/getShops/${slug}`
+          `http://localhost:5000/colleges/getShops/${college}`
         );
         const shops = response.data.shops;
         console.log("The data is ", shops);

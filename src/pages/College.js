@@ -4,18 +4,19 @@ import { useParams, Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import Layout from "../components/Layout";
 
-function ShopListBySlug() {
+function ShopListByID() {
   const [cookies, setCookies] = useCookies(["access_token"]);
   const [shops, setShops] = useState([]);
+  const college = localStorage.getItem("college");
 
-  const { slug } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/colleges/get`);
         const colleges = response.data;
-        const college = colleges.find((col) => col.college === slug);
+        const college = colleges.find((col) => col.college === id);
         if (college) {
           setShops(college.shops);
         }
@@ -24,7 +25,7 @@ function ShopListBySlug() {
       }
     };
     fetchData();
-  }, [slug]);
+  }, [id]);
 
   return (
     <>
@@ -36,7 +37,7 @@ function ShopListBySlug() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {shops.map((shop) => (
-                <Link to={`/deals/${slug}/${shop._id}`}>
+                <Link to={`/deals/${college}/${shop._id}`}>
                   <div class="flex flex-col items-center space-y-2 px-6 shadow-md">
                     <div class="mt-3 md:mt-0">
                       <img
@@ -59,7 +60,7 @@ function ShopListBySlug() {
                       <p class="text-gray-700 font-medium text-base pt-0 pb-1 line-clamp-3">
                         {shop.description}
                       </p>
-                      <Link to={`/deals/${slug}/${shop._id}`}>
+                      <Link to={`/deals/${id}/${shop._id}`}>
                         <button class="bg-[#576CBC] rounded-lg btn px-2 py-1 mt-2 text-white">
                           View Shop
                         </button>
@@ -90,4 +91,4 @@ function ShopListBySlug() {
   );
 }
 
-export default ShopListBySlug;
+export default ShopListByID;

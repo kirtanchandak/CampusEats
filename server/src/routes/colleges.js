@@ -17,11 +17,11 @@ router.get("/get", async (req, res) => {
 });
 
 //get shops only
-router.get("/getShops/:slug", async (req, res) => {
+router.get("/getShops/:college", async (req, res) => {
   try {
-    const { slug } = req.params;
+    const { collegeID } = req.params;
 
-    const college = await CollegeModel.findOne({ slug });
+    const college = await CollegeModel.findOne({ collegeID });
 
     if (!college) {
       return res.status(404).json({ error: "College not found" });

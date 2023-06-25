@@ -7,7 +7,7 @@ const router = express.Router();
 // to save shops
 router.put("/", async (req, res) => {
   try {
-    const college = await CollegeModel.findOne({ slug: req.body.slug });
+    const college = await CollegeModel.findOne({ slug: req.body.college });
     const shopID = req.body.shopID;
     const shop = college.shops.find((shop) => shop._id.toString() === shopID);
     const user = await UserModel.findById(req.body.userID);
