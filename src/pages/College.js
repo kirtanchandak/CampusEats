@@ -15,7 +15,7 @@ function ShopListBySlug() {
       try {
         const response = await axios.get(`http://localhost:5000/colleges/get`);
         const colleges = response.data;
-        const college = colleges.find((col) => col.slug === slug);
+        const college = colleges.find((col) => col.college === slug);
         if (college) {
           setShops(college.shops);
         }
@@ -32,9 +32,7 @@ function ShopListBySlug() {
         <Layout>
           <div className="pt-20 pb-32">
             <div className="text-center p-2 pb-14">
-              <h1 className="text-5xl font-[700]">
-                Shops Near {localStorage.getItem("college")}
-              </h1>
+              <h1 className="text-5xl font-[700]">Shops Near You</h1>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {shops.map((shop) => (
@@ -79,9 +77,12 @@ function ShopListBySlug() {
             <h1 className="text-2xl font-semibold">
               First Login to View Shops
             </h1>
-            <button className="bg-[#D6FF79] px-2 py-1 rounded-md text-xl mt-3">
+            <a
+              href="/login"
+              className="bg-[#D6FF79] px-2 py-1 rounded-md text-xl mt-3"
+            >
               Login
-            </button>
+            </a>
           </div>
         </Layout>
       )}
