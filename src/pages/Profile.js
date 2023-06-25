@@ -37,12 +37,10 @@ function Profile() {
     <>
       <Layout>
         <div className="pt-20 pb-32">
-          <h1 className="text-center font-medium text-lg">Profile Page</h1>
-          <h2 className="text-center text-gray-600 text-sm">Name: {name}</h2>
-          <h2 className="text-center text-gray-600 text-sm">
-            College: {college}
+          <h1 className="text-center font-medium text-3xl">Profile Page</h1>
+          <h2 className="text-center text-gray-600 text-xl mt-3">
+            Name: {name}
           </h2>
-
           <div className="mt-8">
             <h1 className="text-lg font-medium">Subscriptions</h1>
             <hr className="mt-2 border-gray-300" />
