@@ -7,6 +7,9 @@ import lmniit from "../assets/lmniit.png";
 import lpu from "../assets/lpu.png";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
+import food from "../assets/food.png";
+import subscribe from "../assets/Subscriber-bro.png";
+import login from "../assets/Mobile login-pana.png";
 
 function Home() {
   const [cookies, setCookies] = useCookies(["access_token"]);
@@ -79,7 +82,13 @@ function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div class="flex flex-col items-center space-y-2 px-6">
               <div class="mt-3 md:mt-0 i9prqz1">
-                <img src="" alt="img" width="160" height="151" loading="lazy" />
+                <img
+                  src={login}
+                  alt="img"
+                  width="160"
+                  height="151"
+                  loading="lazy"
+                />
               </div>
               <div class="text-center">
                 <a href="/">
@@ -94,7 +103,13 @@ function Home() {
             </div>
             <div class="flex flex-col items-center space-y-2 px-6">
               <div class="mt-3 md:mt-0">
-                <img src="" alt="img" width="160" height="151" loading="lazy" />
+                <img
+                  src={food}
+                  alt="img"
+                  width="160"
+                  height="151"
+                  loading="lazy"
+                />
               </div>
               <div class="text-center">
                 <a href="/">
@@ -108,7 +123,13 @@ function Home() {
             </div>
             <div class="flex flex-col items-center space-y-2 px-6">
               <div class="mt-3 md:mt-0 i9prqz1">
-                <img src="" alt="img" width="160" height="151" loading="lazy" />
+                <img
+                  src={subscribe}
+                  alt="img"
+                  width="160"
+                  height="151"
+                  loading="lazy"
+                />
               </div>
               <div class="text-center">
                 <a href="/">
