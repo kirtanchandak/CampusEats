@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Welcome to Campus Eats 🍽️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div style="text-align: center;">
+<img src="https://ik.imagekit.io/kirtanchandak/campusEats/okkkkkkk-removebg-preview.png?updatedAt=16877155155933" height="250" width="250" alt="ayurveda" />
+</div>
 
-## Available Scripts
+Nourishing Connections, Empowering Communities
 
-In the project directory, you can run:
+## What is Campus Eats?
 
-### `npm start`
+Campus Eats provides a platform for students to discover exclusive deals and discounts from local food vendors, helping them stretch their limited budgets and make every dollar count. Simultaneously, local food vendors gained a newfound avenue to reach and connect with a vibrant student community.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Roadmap
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### The user by default gets redirected to the **home page** of the site.
 
-### `npm test`
+<img src="https://ik.imagekit.io/kirtanchandak/campusEats/home.png?updatedAt=1687715724891" alt="home-page" />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### After successfully registration / login, the user will get redirected to the shops page.
 
-### `npm run build`
+<img src="https://ik.imagekit.io/kirtanchandak/campusEats/sub.png?updatedAt=1687715850790" alt="login-page" />
+<img src="https://ik.imagekit.io/kirtanchandak/campusEats/shops.png?updatedAt=1687715729998" alt="events-page" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Then the user can subscribe for the deal, which can be viewed in the user's profile page. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="https://ik.imagekit.io/kirtanchandak/campusEats/sub.png?updatedAt=1687715850790" alt="event-page" />
+<img src="https://ik.imagekit.io/kirtanchandak/campusEats/profilepage.png?updatedAt=1687715723373" alt="event-page" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![ExpressJS](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://github.com/kirtanchandak/CampusEats/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=kirtanchandak/SocietalServe" />
+</a>
