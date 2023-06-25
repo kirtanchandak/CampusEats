@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { AiFillHeart } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
 import { useCookies } from "react-cookie";
 import profile from "../assets/profile.png";
@@ -10,6 +9,7 @@ const Navbar = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+  const college = localStorage.getItem("college");
 
   const username = localStorage.getItem("username");
   console.log(username);
@@ -37,12 +37,7 @@ const Navbar = () => {
         <div className="a-content hidden md:flex mt-4">
           <ul className="flex gap-10" id="nav">
             <li>
-              <a href="/cart" className="">
-                Cart 🛒
-              </a>
-            </li>
-            <li>
-              <a href="/" className="">
+              <a href={`/deals/${college}`} className="">
                 Shop
               </a>
             </li>

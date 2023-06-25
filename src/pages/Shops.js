@@ -18,7 +18,7 @@ const Shops = () => {
         userID,
         collegeID,
       });
-      console.log("Subscription saved");
+      alert("You are subscribed, check your subscription in profile page!");
     } catch (err) {
       console.log(err);
     }
