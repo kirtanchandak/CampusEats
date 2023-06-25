@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import loginImg from "../assets/coke.png";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -31,26 +33,56 @@ function Login() {
 
   return (
     <>
-      <div>
-        <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="">Username</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            className="border-2 border-black"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <label htmlFor="">Password</label>
-          <input
-            type="password"
-            className="border-2 border-black"
-            name="password"
-            id="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button>Login</button>
-        </form>
+      <div className="bg-[#D6FF79] flex flex-col lg:flex-row h-screen p-3">
+        <div className=" w-full lg:w-1/2 bg-grey-lighter flex rounded flex-col order-2 lg:order-1 bg-white">
+          <div className="container w-full lg:w-4/6 mx-auto flex-1 flex flex-col items-center justify-center px-2">
+            <div className="bg-white px-6 py-8 rounded text-black w-full">
+              <h1 className="text-3xl text-center font-semibold">
+                Welcome Back
+              </h1>
+              <form action="" onSubmit={handleSubmit}>
+                <div className="flex my-5 bg-gray-200 rounded-md p-3 items-center space-x-2">
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    onChange={(e) => setUsername(e.target.value)}
+                    className="outline-none bg-transparent"
+                    placeholder="Username"
+                  />
+                </div>
+                <div className="flex my-5 bg-gray-200 rounded-md p-3 items-center space-x-2">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="outline-none w-full bg-transparent"
+                    placeholder="Password"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full font-medium flex justify-between p-3 items-center  bg-[#D6FF79] text-center py-3 rounded bg-green text-white focus:outline-none my-1"
+                >
+                  <h2 className="text-black">Login</h2>
+                </button>
+                <div className=" my-4 flex w-full justify-between">
+                  <h2>Don't have account?</h2>
+                  <Link
+                    to="/signup"
+                    className="flex text-lg font-medium text-black items-center space-x-2"
+                  >
+                    <h2>Register</h2>
+                  </Link>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div className="w-full lg:w-1/2 order-1 flex items-center lg:order-2 justify-center">
+          <img src={loginImg} className=" w-48 my-5 lg:w-96" alt="logo" />
+        </div>
       </div>
     </>
   );
