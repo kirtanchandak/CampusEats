@@ -15,7 +15,7 @@ function ShopListByID() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/colleges/getShops/${collegeID}`
+          `https://lively-citizen-390711.de.r.appspot.com/colleges/getShops/${collegeID}`
         );
         const shopsie = response.data.shops;
         console.log("The data is ", shops);

@@ -14,10 +14,13 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/auth/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://lively-citizen-390711.de.r.appspot.com/auth/login",
+        {
+          username,
+          password,
+        }
+      );
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
       window.localStorage.setItem("slug", response.data.slug);

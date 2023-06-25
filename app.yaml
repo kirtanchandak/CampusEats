@@ -1,0 +1,19 @@
+runtime: nodejs20
+
+manual_scaling:
+  instances: 1
+
+env_variables:
+  MONGO_URI: "mongodb+srv://cornellblog:1234567890@cornellblog.4c5hnap.mongodb.net/campuseatss?retryWrites=true&w=majority"
+  RZP_KEY_ID: "rzp_test_nT2Ik8qe9WR7et"
+  RZP_KEY_SECRET: "5Zk9wPRByK6LLjDshdH4eQFD"
+
+handlers:
+  - url: /(.*\..+)$
+    static_files: build/\1
+    upload: build/(.*\..+)$
+
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always

@@ -15,12 +15,15 @@ function SignUp() {
   const handleSumbit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/auth/register", {
-        username,
-        password,
-        college,
-        name,
-      });
+      await axios.post(
+        "https://lively-citizen-390711.de.r.appspot.com/auth/register",
+        {
+          username,
+          password,
+          college,
+          name,
+        }
+      );
 
       navigate("/login");
     } catch (err) {

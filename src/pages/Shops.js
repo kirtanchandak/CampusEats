@@ -13,11 +13,14 @@ const Shops = () => {
   const handleSubscription = async (e) => {
     e.preventDefault();
     try {
-      await axios.put("http://localhost:5000/saveSubscription", {
-        shopID,
-        userID,
-        collegeID,
-      });
+      await axios.put(
+        "https://lively-citizen-390711.de.r.appspot.com/saveSubscription",
+        {
+          shopID,
+          userID,
+          collegeID,
+        }
+      );
       alert("You are subscribed, check your subscription in profile page!");
     } catch (err) {
       console.log(err);
@@ -29,7 +32,7 @@ const Shops = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/colleges/getShops/${collegeID}`
+          `https://lively-citizen-390711.de.r.appspot.com/colleges/getShops/${collegeID}`
         );
         const shops = response.data.shops;
         console.log("The data is ", shops);

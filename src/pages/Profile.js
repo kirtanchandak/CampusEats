@@ -23,7 +23,7 @@ function Profile() {
     const fetchSubscriptions = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/saveSubscription/${userID}`
+          `https://lively-citizen-390711.de.r.appspot.com/saveSubscription/${userID}`
         );
         setSubscriptions(response.data);
       } catch (err) {
