@@ -11,29 +11,15 @@ function ShopListByID() {
 
   const { id } = useParams();
   console.log(id);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(`http://localhost:5000/colleges/get`);
-  //       const colleges = response.data;
-  //       const college = colleges.find((col) => col.college === id);
-  //       if (college) {
-  //         setShops(college.shops);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [id]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
           `http://localhost:5000/colleges/getShops/${collegeID}`
         );
-        console.log(response.data);
+        const shopsie = response.data.shops;
+        console.log("The data is ", shops);
+        setShops(shopsie);
       } catch (error) {
         console.log(error);
       }
