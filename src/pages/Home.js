@@ -6,6 +6,7 @@ import vit from "../assets/vit.png";
 import lmniit from "../assets/lmniit.png";
 import lpu from "../assets/lpu.png";
 import { useCookies } from "react-cookie";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [cookies, setCookies] = useCookies(["access_token"]);
@@ -27,7 +28,9 @@ function Home() {
                 no student goes hungry.
               </p>
               <div class="sm:flex sm:space-y-0 sm:space-x-4 flex pt-4 gap-5">
-                <button className="font-medium">Login</button>
+                <Link className="font-medium mt-2" to="/login">
+                  Login
+                </Link>
                 {cookies.access_token ? (
                   <a
                     href={`deals/${college}`}

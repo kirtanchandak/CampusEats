@@ -7,7 +7,7 @@ function Footer() {
         <div className="px-6 sm:px-4 xl:px-0 md:max-w-screen my-0 mx-8 flex flex-col space-y-6 pb-4">
           <div className="flex flex-row  items-center justify-center sm:justify-start pb-6 mt-2 border-b border-solid border-gray6">
             <div className="hidden sm:block font-semibold">
-              Post your own NGO event.
+              Register your own shop
               <a
                 href="/"
                 className="i157fg5d inline-flex ml-4 px-4 py-2 border-2 rounded-md hover:bg-white hover:text-[#1F2937] focus:bg-white focus:text-[#1F2937]"
@@ -112,7 +112,7 @@ function Footer() {
             </div>
           </div>
           <div className="ds-font-small flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 text-gray4 pt-2">
-            <span className="text-white">© 2023 SocietalServe</span>
+            <span className="text-white">© 2023 CampusEats</span>
             <a
               href="/"
               data-event-label="Terms of Service"
